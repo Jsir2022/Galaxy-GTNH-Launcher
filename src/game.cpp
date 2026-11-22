@@ -118,6 +118,8 @@ static void installPack(const QString &root, const QJsonObject &meta, const Prog
 static void downloadBatch(const QList<Download> &files)
 {
     if (files.isEmpty()) return;
+    // Prepare shared parent directories before Windows download workers race to create them.
+    for (const auto &file : files) makeDirectory(QFileInfo(file.path).absolutePath());
     // Each worker owns its own Qt network manager and reuses connections across its queue.
     constexpr int parallelism = 8;
     std::array<std::future<void>, parallelism> jobs;

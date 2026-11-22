@@ -8,7 +8,7 @@
 #include <QFileInfo>
 #include <QNetworkReply>
 #include <QSaveFile>
-#include <QTimer>
+#include <QThread>
 #include <memory>
 #include <stdexcept>
 
@@ -86,6 +86,14 @@ QJsonObject Http::json(const QUrl &url, const QByteArray &body,
     return readJson(data);
 }
 
+static bool transientDownloadError(QNetworkReply::NetworkError error, int status)
+{
+    return status == 408 || status == 429 || (status >= 500 && status < 600) ||
+           error == QNetworkReply::RemoteHostClosedError || error == QNetworkReply::TimeoutError ||
+           error == QNetworkReply::TemporaryNetworkFailureError || error == QNetworkReply::ProxyTimeoutError ||
+           error == QNetworkReply::ProxyConnectionClosedError;
+}
+
 void Http::download(const Download &file, const std::function<void(qint64)> &progress)
 {
     QFile existing(file.path);
@@ -95,31 +103,46 @@ void Http::download(const Download &file, const std::function<void(qint64)> &pro
     }
     existing.close();
     makeDirectory(QFileInfo(file.path).absolutePath());
-    QSaveFile output(file.path);
-    if (!output.open(QIODevice::WriteOnly)) fail("无法写入 " + file.path);
-    QCryptographicHash hash(file.algorithm);
-    auto request = requestFor(file.url, QNetworkRequest::NoLessSafeRedirectPolicy);
-    std::unique_ptr<QNetworkReply> reply(manager.get(request));
-    qint64 size = 0;
-    bool writeError = false;
-    auto receive = [&] {
-        const auto bytes = reply->readAll();
-        size += bytes.size();
-        if (size > file.size || output.write(bytes) != bytes.size()) {
-            writeError = true;
-            reply->abort();
-            return;
+    constexpr int maxAttempts = 3;
+    for (int attempt = 1; attempt <= maxAttempts; ++attempt) {
+        QSaveFile output(file.path);
+        if (!output.open(QIODevice::WriteOnly)) fail("无法写入 " + file.path);
+        QCryptographicHash hash(file.algorithm);
+        auto request = requestFor(file.url, QNetworkRequest::NoLessSafeRedirectPolicy);
+        std::unique_ptr<QNetworkReply> reply(manager.get(request));
+        qint64 size = 0;
+        bool writeError = false;
+        auto receive = [&] {
+            if (reply->bytesAvailable() == 0) return;
+            const auto bytes = reply->readAll();
+            if (reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt() >= 400) return;
+            size += bytes.size();
+            if (size > file.size || output.write(bytes) != bytes.size()) {
+                writeError = true;
+                reply->abort();
+                return;
+            }
+            hash.addData(bytes);
+            if (progress) progress(size);
+        };
+        QObject::connect(reply.get(), &QNetworkReply::readyRead, reply.get(), receive);
+        await(reply.get());
+        receive();
+        if (writeError) fail("下载超出预期大小或无法写入 " + file.path);
+        if (reply->error() != QNetworkReply::NoError) {
+            const auto status = reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+            if (attempt < maxAttempts && transientDownloadError(reply->error(), status)) {
+                output.cancelWriting();
+                reply.reset();
+                manager.clearConnectionCache();
+                QThread::msleep(500 * attempt);
+                continue;
+            }
+            fail("下载失败 " + file.url.toString() + " · " + reply->errorString());
         }
-        hash.addData(bytes);
-        if (progress) progress(size);
-    };
-    QObject::connect(reply.get(), &QNetworkReply::readyRead, reply.get(), receive);
-    await(reply.get());
-    receive();
-    if (writeError) fail("下载超出预期大小或无法写入 " + file.path);
-    if (reply->error() != QNetworkReply::NoError)
-        fail("下载失败 " + file.url.toString() + " · " + reply->errorString());
-    if (size != file.size || hash.result().toHex() != file.digest)
-        fail("文件校验失败 " + file.url.toString());
-    if (!output.commit()) fail("无法保存 " + file.path);
+        if (size != file.size || hash.result().toHex() != file.digest)
+            fail("文件校验失败 " + file.url.toString());
+        if (!output.commit()) fail("无法保存 " + file.path);
+        return;
+    }
 }

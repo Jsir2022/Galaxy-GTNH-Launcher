@@ -18,6 +18,12 @@ GALAXY_MODS = {
 
 
 def applies(library, platform):
+    # The Windows distribution bundles an x64 JRE. Upstream's generic Windows
+    # rules also allow its ARM64 and x86 LWJGL native archives.
+    if platform == "windows" and library["name"].startswith("org.lwjgl:"):
+        name = library["name"].split(":")[1]
+        if name.endswith(("-natives-windows-arm64", "-natives-windows-x86")):
+            return False
     rules = library.get("rules")
     if rules is None:
         return True
