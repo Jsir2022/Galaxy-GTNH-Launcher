@@ -1,4 +1,6 @@
+import java.io.DataInputStream;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
@@ -7,7 +9,18 @@ import java.util.zip.ZipFile;
 
 /** Extracts pinned upstream ZIP content into an empty, launcher-owned directory. */
 public class Extract {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] ignored) throws IOException {
+        var inputArgs = new DataInputStream(System.in);
+        int count = inputArgs.readInt();
+        if (count < 3 || count > 32) throw new IOException("Invalid archive arguments");
+        var args = new String[count];
+        for (int index = 0; index < count; index++) {
+            int size = inputArgs.readInt();
+            if (size < 0 || size > 262144) throw new IOException("Invalid archive argument size");
+            byte[] payload = inputArgs.readNBytes(size);
+            if (payload.length != size) throw new IOException("Incomplete archive arguments");
+            args[index] = new String(payload, StandardCharsets.UTF_8);
+        }
         var output = Path.of(args[1]).toAbsolutePath().normalize();
         try (var zip = new ZipFile(args[0])) {
             for (var entry : Collections.list(zip.entries())) {

@@ -3,6 +3,7 @@
 #include "http.h"
 #include <QCoreApplication>
 #include <QDir>
+#include <QDataStream>
 #include <QElapsedTimer>
 #include <QFile>
 #include <QFileInfo>
@@ -46,8 +47,21 @@ static void extract(const QString &zip, const QString &directory, const QString 
 {
     makeDirectory(directory);
     QProcess java;
-    java.start(javaPath(), QStringList{"-cp", appPath(), "Extract", zip, directory, prefix} + exclude);
-    if (!java.waitForStarted() || !java.waitForFinished(180000) ||
+    java.setWorkingDirectory(appPath());
+    java.start(javaPath(), {"-cp", ".", "Extract"});
+    if (!java.waitForStarted()) fail("无法启动解压助手：" + java.errorString());
+    const auto paths = QStringList{zip, directory, prefix} + exclude;
+    QByteArray request;
+    QDataStream stream(&request, QIODevice::WriteOnly);
+    stream << qint32(paths.size());
+    for (const auto &path : paths) {
+        const auto utf8 = path.toUtf8();
+        stream << qint32(utf8.size());
+        stream.writeRawData(utf8.constData(), utf8.size());
+    }
+    if (java.write(request) != request.size()) fail("无法向解压助手传递路径。");
+    java.closeWriteChannel();
+    if (!java.waitForFinished(180000) ||
         java.exitStatus() != QProcess::NormalExit || java.exitCode() != 0) {
         fail("解压失败：" + QString::fromUtf8(java.readAllStandardError()).left(1600));
     }
@@ -224,11 +238,11 @@ void startGame(const QString &root, const Account &account, const Progress &stat
     const QHash<QString, QString> values{
         {"auth_player_name", account.name}, {"auth_uuid", account.uuid},
         {"auth_access_token", account.accessToken}, {"user_properties", "{}"},
-        {"user_type", "msa"}, {"version_name", "1.7.10"}, {"game_directory", game},
-        {"assets_root", assetRoot}, {"assets_index_name", index}
+        {"user_type", "msa"}, {"version_name", "1.7.10"}, {"game_directory", "."},
+        {"assets_root", QDir(game).relativeFilePath(assetRoot)}, {"assets_index_name", index}
     };
     auto arguments = strings(meta.value("jvm"));
-    arguments << "-Xms1G" << "-Xmx6G" << "-Djava.library.path=" + natives.path()
+    arguments << "-Xms1G" << "-Xmx6G" << "-Djava.library.path=" + QDir(game).relativeFilePath(natives.path())
               << "-cp" << classpath.join(classpathSeparator) << meta.value("main").toString();
     for (auto argument : strings(meta.value("arguments"))) {
         if (argument.startsWith("${") && argument.endsWith('}')) {
