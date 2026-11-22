@@ -119,5 +119,8 @@ for name, digest in mods.items():
         raise ValueError(f"Incorrect Galaxy mod bytes: {name}")
     shutil.copy2(source, overlay)
 
-for file in ("README.md", "LICENSE", "THIRD-PARTY.md"):
+for file in ("README.md", "README.zh-CN.md", "LICENSE", "THIRD-PARTY.md"):
     shutil.copy2(repository / file, stage)
+
+(stage / "docs").mkdir()
+shutil.copy2(repository / "docs/BUILD.md", stage / "docs/BUILD.md")
