@@ -6,6 +6,12 @@ Not an official Minecraft product. Not approved by or associated with Mojang or 
 
 本项目源码采用 GPL-3.0-or-later。第三方组件分别适用其许可，见 [来源清单](THIRD-PARTY.md)。
 
+## 下载源
+
+玩家可在启动窗口选择 Minecraft 下载源。默认使用 Mojang 官方源，其次可手动选择 BMCLAPI 国内社区镜像。启动器会记住选择及安装目录。再次打开时可确认下载源后点击「启动游戏」。所有发行构建先验证正版权益，再从所选来源下载 Minecraft 客户端、资源索引、原版资源及 Mojang 游戏库。文件大小和摘要来自固定版本元数据。GTNH 整合包从 GTNH 项目获取，其余依赖按各自源地址下载。微软及 Minecraft Services 授权请求继续直连相应服务端点。
+
+国内社区镜像由 [BMCLAPI](https://bmclapidoc.bangbang93.com/) 提供。
+
 ## 构建
 
 依赖 CMake 3.22+、Qt 6.4+（Widgets、Network）、C++20 编译器和构建用 JDK 17+。

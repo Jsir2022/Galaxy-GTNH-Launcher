@@ -135,13 +135,33 @@ static void downloadBatch(const QList<Download> &files)
     }
 }
 
-static void installAssets(const QString &root, const QJsonObject &index, const Progress &status)
+static QUrl minecraftDownloadUrl(QUrl url, DownloadSource source)
+{
+    if (source == DownloadSource::Mojang || url.scheme() != "https") return url;
+
+    const auto host = url.host();
+    if (host == "resources.download.minecraft.net") {
+        url.setPath("/assets" + url.path());
+    } else if (host == "libraries.minecraft.net") {
+        url.setPath("/maven" + url.path());
+    } else if (host != "launcher.mojang.com" && host != "piston-meta.mojang.com" &&
+               host != "piston-data.mojang.com") {
+        return url;
+    }
+    url.setHost("bmclapi2.bangbang93.com");
+    return url;
+}
+
+static void installAssets(const QString &root, const QJsonObject &index,
+                          DownloadSource source, const Progress &status)
 {
     const auto assets = root + "/assets";
     const auto id = index.value("id").toString();
     const auto indexPath = assets + "/indexes/" + id + ".json";
     Http http;
-    http.download(fileSpec(indexPath, index));
+    auto indexFile = fileSpec(indexPath, index);
+    indexFile.url = minecraftDownloadUrl(indexFile.url, source);
+    http.download(indexFile);
     const auto metadata = readJson(readFile(indexPath));
     const auto objects = metadata.value("objects").toObject();
     if (objects.isEmpty()) fail("游戏资源索引为空。");
@@ -155,7 +175,7 @@ static void installAssets(const QString &root, const QJsonObject &index, const P
         if (queued.contains(hash)) continue;
         queued.insert(hash);
         const auto relative = hash.left(2) + "/" + hash;
-        batch.append({QUrl("https://resources.download.minecraft.net/" + relative),
+        batch.append({minecraftDownloadUrl(QUrl("https://resources.download.minecraft.net/" + relative), source),
                       assets + "/objects/" + relative, hash.toLatin1(), object.value("size").toInteger()});
     }
     constexpr int batchSize = 128;
@@ -198,7 +218,7 @@ static void installGalaxyMods(const QString &root, const QJsonObject &mods)
     }
 }
 
-void prepareGame(const QString &root, const Progress &status)
+void prepareGame(const QString &root, DownloadSource source, const Progress &status)
 {
     javaPath();
     const auto meta = metadata();
@@ -211,11 +231,16 @@ void prepareGame(const QString &root, const Progress &status)
     for (const auto &item : libraries) {
         const auto library = item.toObject();
         const auto path = root + "/" + library.value("path").toString();
-        if (library.contains("url")) downloads.append(fileSpec(path, library));
-        else if (!QFileInfo(path).isFile()) fail("缺少整合包启动库：" + path);
+        if (library.contains("url")) {
+            auto download = fileSpec(path, library);
+            download.url = minecraftDownloadUrl(download.url, source);
+            downloads.append(download);
+        } else if (!QFileInfo(path).isFile()) {
+            fail("缺少整合包启动库：" + path);
+        }
     }
     downloadBatch(downloads);
-    installAssets(root, meta.value("assetIndex").toObject(), status);
+    installAssets(root, meta.value("assetIndex").toObject(), source, status);
 }
 
 void startGame(const QString &root, const Account &account, const Progress &status)

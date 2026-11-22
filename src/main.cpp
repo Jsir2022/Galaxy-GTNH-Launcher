@@ -4,6 +4,7 @@
 #include "http.h"
 #include <QApplication>
 #include <QClipboard>
+#include <QComboBox>
 #include <QCommandLineParser>
 #include <QDesktopServices>
 #include <QDir>
@@ -54,6 +55,14 @@ public:
         layout->addWidget(title);
         auto server = new QLabel(QString("服务器 %1").arg(serverHost));
         layout->addWidget(server);
+        auto sourceRow = new QHBoxLayout;
+        auto sourceLabel = new QLabel("Minecraft 下载源");
+        sourceLabel->setBuddy(&downloadSource);
+        sourceRow->addWidget(sourceLabel);
+        downloadSource.addItem("Mojang 官方源", "mojang");
+        downloadSource.addItem("BMCLAPI 国内社区镜像", "bmclapi");
+        sourceRow->addWidget(&downloadSource, 1);
+        layout->addLayout(sourceRow);
         layout->addStretch();
         layout->addWidget(&status);
         status.setWordWrap(true);
@@ -74,6 +83,11 @@ public:
         cancel.hide();
 
         selected = settings.value("directory").toString();
+        const auto savedSource = downloadSource.findData(settings.value("downloadSource", "mojang"));
+        if (savedSource >= 0) downloadSource.setCurrentIndex(savedSource);
+        connect(&downloadSource, &QComboBox::currentIndexChanged, this, [this] {
+            settings.setValue("downloadSource", downloadSource.currentData());
+        });
         showDirectory();
         connect(&choose, &QPushButton::clicked, this, [this] {
             const auto path = QFileDialog::getExistingDirectory(this, "选择 GTNH 安装目录", selected);
@@ -95,7 +109,6 @@ public:
             if (worker) worker->requestInterruption();
             cancel.setEnabled(false);
         });
-        if (!selected.isEmpty()) QMetaObject::invokeMethod(this, [this] { launch(); }, Qt::QueuedConnection);
     }
 
 protected:
@@ -123,10 +136,13 @@ private:
             status.setText("此发行版尚未配置可用的微软正版登录应用 ID。");
             return;
         }
+        const auto source = downloadSource.currentData().toString() == "bmclapi"
+            ? DownloadSource::Bmclapi : DownloadSource::Mojang;
         choose.setEnabled(false);
         signIn.setEnabled(false);
+        downloadSource.setEnabled(false);
         status.setText("正在验证 Minecraft 正版账号…");
-        worker = QThread::create([this, location = selected, app] {
+        worker = QThread::create([this, location = selected, app, source] {
             auto report = [this](const QString &text) {
                 QMetaObject::invokeMethod(this, [this, text] { status.setText(text); }, Qt::QueuedConnection);
             };
@@ -148,7 +164,7 @@ private:
                 if (QThread::currentThread()->isInterruptionRequested()) fail("已取消正版授权。");
                 QMetaObject::invokeMethod(this, [this] { hideAuth(); }, Qt::QueuedConnection);
                 report("已验证 " + account.name + "，正在准备游戏…");
-                prepareGame(root, report);
+                prepareGame(root, source, report);
                 report("正在启动游戏…");
                 startGame(root, account, report);
                 report("游戏已关闭。");
@@ -162,6 +178,7 @@ private:
             hideAuth();
             choose.setEnabled(true);
             signIn.setEnabled(true);
+            downloadSource.setEnabled(true);
         });
         worker->start();
     }
@@ -176,6 +193,7 @@ private:
 
     QLabel status;
     QLabel directory;
+    QComboBox downloadSource;
     QPushButton choose{"选择目录"};
     QPushButton signIn{"启动游戏"};
     QPushButton openBrowser{"复制代码并打开浏览器"};
@@ -201,13 +219,19 @@ int main(int argc, char *argv[])
         QCommandLineParser parser;
         parser.addHelpOption();
         const QCommandLineOption prepare("prepare-only", "Install without authentication or game launch.", "directory");
+        const QCommandLineOption download("download-source", "Minecraft download source: mojang or bmclapi.",
+                                          "source", "mojang");
         parser.addOption(prepare);
+        parser.addOption(download);
         parser.process(app);
         try {
+            const auto sourceName = parser.value(download);
+            if (sourceName != "mojang" && sourceName != "bmclapi") fail("未知 Minecraft 下载源。");
+            const auto source = sourceName == "bmclapi" ? DownloadSource::Bmclapi : DownloadSource::Mojang;
             const auto root = gameRoot(parser.value(prepare));
             QLockFile lock(root + "/.launcher.lock");
             lockInstallation(lock);
-            prepareGame(root, [](const QString &text) { qInfo().noquote() << text; });
+            prepareGame(root, source, [](const QString &text) { qInfo().noquote() << text; });
             qInfo().noquote() << "GTNH ready in" << root;
             return 0;
         } catch (const std::exception &error) {
