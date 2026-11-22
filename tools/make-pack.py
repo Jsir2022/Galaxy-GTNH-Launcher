@@ -64,8 +64,14 @@ def generate(path):
                    for item in components]
     minecraft = next(patch for patch in patches if patch["uid"] == "net.minecraft")
     # Component order takes precedence over standalone metadata's numeric order.
-    libraries = [item for patch in patches for item in patch.get("libraries", [])]
-    libraries.append(minecraft["mainJar"])
+    libraries = {}
+    for patch in patches:
+        for library in patch.get("libraries", []):
+            group, name, _, *classifier = library["name"].split(":")
+            # A later component replaces an earlier version of the same library.
+            # Forge 1.7.10 requires its Guava 17 in place of vanilla Guava 15.
+            libraries[group, name, tuple(classifier)] = library
+    libraries = [*libraries.values(), minecraft["mainJar"]]
     return {
         "archive": {"url": PACK_URL, "sha256": PACK_HASH, "size": path.stat().st_size},
         "instance": instance,

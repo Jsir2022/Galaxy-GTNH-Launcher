@@ -369,10 +369,10 @@
         "size": 1452995
       },
       {
-        "path": "libraries/com/google/guava/guava/15.0/guava-15.0.jar",
-        "url": "https://libraries.minecraft.net/com/google/guava/guava/15.0/guava-15.0.jar",
-        "sha1": "ed727a8d9f247e2050281cb083f1c77b09dcb5cd",
-        "size": 2172168
+        "path": "libraries/com/google/guava/guava/17.0/guava-17.0.jar",
+        "url": "https://libraries.minecraft.net/com/google/guava/guava/17.0/guava-17.0.jar",
+        "sha1": "9c6ef172e8de35fd8d4d8783e4821e57cdef7445",
+        "size": 2243036
       },
       {
         "path": "libraries/commons-codec/commons-codec/1.9/commons-codec-1.9.jar",
@@ -511,12 +511,6 @@
         "url": "https://libraries.minecraft.net/lzma/lzma/0.0.1/lzma-0.0.1.jar",
         "sha1": "521616dc7487b42bef0e803bd2fa3faf668101d7",
         "size": 5762
-      },
-      {
-        "path": "libraries/com/google/guava/guava/17.0/guava-17.0.jar",
-        "url": "https://libraries.minecraft.net/com/google/guava/guava/17.0/guava-17.0.jar",
-        "sha1": "9c6ef172e8de35fd8d4d8783e4821e57cdef7445",
-        "size": 2243036
       },
       {
         "path": "libraries/com/mojang/minecraft/1.7.10/client.jar",
@@ -935,10 +929,10 @@
         "size": 1452995
       },
       {
-        "path": "libraries/com/google/guava/guava/15.0/guava-15.0.jar",
-        "url": "https://libraries.minecraft.net/com/google/guava/guava/15.0/guava-15.0.jar",
-        "sha1": "ed727a8d9f247e2050281cb083f1c77b09dcb5cd",
-        "size": 2172168
+        "path": "libraries/com/google/guava/guava/17.0/guava-17.0.jar",
+        "url": "https://libraries.minecraft.net/com/google/guava/guava/17.0/guava-17.0.jar",
+        "sha1": "9c6ef172e8de35fd8d4d8783e4821e57cdef7445",
+        "size": 2243036
       },
       {
         "path": "libraries/commons-codec/commons-codec/1.9/commons-codec-1.9.jar",
@@ -1095,12 +1089,6 @@
         "url": "https://libraries.minecraft.net/lzma/lzma/0.0.1/lzma-0.0.1.jar",
         "sha1": "521616dc7487b42bef0e803bd2fa3faf668101d7",
         "size": 5762
-      },
-      {
-        "path": "libraries/com/google/guava/guava/17.0/guava-17.0.jar",
-        "url": "https://libraries.minecraft.net/com/google/guava/guava/17.0/guava-17.0.jar",
-        "sha1": "9c6ef172e8de35fd8d4d8783e4821e57cdef7445",
-        "size": 2243036
       },
       {
         "path": "libraries/com/mojang/minecraft/1.7.10/client.jar",

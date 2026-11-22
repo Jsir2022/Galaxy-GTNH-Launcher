@@ -45,6 +45,7 @@ def deploy_linux(qt_lib, plugins, stage):
         "platforms": ["libqxcb.so", "libqwayland.so"],
         "tls": ["libqopensslbackend.so", "libqcertonlybackend.so"],
         "wayland-shell-integration": ["libxdg-shell.so"],
+        "wayland-decoration-client": ["libbradient.so"],
     }.items():
         target = stage / "plugins" / group
         target.mkdir(parents=True)

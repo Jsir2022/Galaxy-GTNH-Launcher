@@ -250,7 +250,13 @@ void startGame(const QString &root, const Account &account, const Progress &stat
     if (!process.waitForStarted()) fail("Minecraft 进程无法启动：" + process.errorString());
     status("已启动 Minecraft，正在进入指定服务器…");
     const auto token = account.accessToken.toUtf8();
+    bool bootstrapFailed = false;
     auto writeLog = [&](QByteArray bytes) {
+        // RFB runs the game on a secondary thread. A fatal exception can
+        // terminate that thread without setting a nonzero JVM exit code.
+        if (bytes.contains("Exception in thread \"RFB-Main\"") ||
+            bytes.contains("A CRITICAL PROBLEM OCCURED INITIALIZING MINECRAFT"))
+            bootstrapFailed = true;
         log.write(bytes.replace(token, "<redacted>"));
     };
     while (process.state() != QProcess::NotRunning) {
@@ -258,6 +264,6 @@ void startGame(const QString &root, const Account &account, const Progress &stat
         while (process.canReadLine()) writeLog(process.readLine());
     }
     writeLog(process.readAll());
-    if (process.exitStatus() != QProcess::NormalExit || process.exitCode() != 0)
+    if (bootstrapFailed || process.exitStatus() != QProcess::NormalExit || process.exitCode() != 0)
         fail("Minecraft 异常退出。游戏日志：" + log.fileName());
 }
