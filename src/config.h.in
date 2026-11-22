@@ -1,0 +1,4 @@
+#pragma once
+inline constexpr auto defaultClientId = "@MSA_CLIENT_ID@";
+inline constexpr auto serverHost = "@GTNH_SERVER@";
+inline constexpr int serverPort = @GTNH_SERVER_PORT@;

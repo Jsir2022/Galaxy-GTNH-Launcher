@@ -1,0 +1,1113 @@
+{
+  "archive": {
+    "url": "https://downloads.gtnewhorizons.com/Multi_mc_downloads/GT_New_Horizons_2.9.0_Java_17-26.zip",
+    "sha256": "6d0ebe7e6be18fb74b4fc920916cc5710e142a3f885072d324da05244d398b16",
+    "size": 747848389
+  },
+  "instance": "GT New Horizons 2.9.0/",
+  "galaxyMods": {
+    "chainengineering-0.1.0-alpha.7.jar": "891bb67c225f9546fe595e97c31d826138b1469aa84540bf8ed48b5b22db2c08",
+    "127-qz_uilib-1.8.2.jar": "4d8e33ac9447bf2ed9f266822867082cbe386850504e9f44859a41f178e5268f"
+  },
+  "assetIndex": {
+    "id": "1.7.10",
+    "sha1": "1863782e33ce7b584fc45b037325a1964e095d3e",
+    "size": 72996,
+    "totalSize": 112396854,
+    "url": "https://piston-meta.mojang.com/v1/packages/1863782e33ce7b584fc45b037325a1964e095d3e/1.7.10.json"
+  },
+  "jvm": [
+    "-Dfile.encoding=UTF-8",
+    "-Djava.system.class.loader=com.gtnewhorizons.retrofuturabootstrap.RfbSystemClassLoader",
+    "--enable-native-access",
+    "ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.io=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.lang.invoke=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.lang.ref=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.lang.reflect=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.lang=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.net.spi=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.net=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.nio.channels=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.nio.charset=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.nio.file=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.nio=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.text=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.time.chrono=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.time.format=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.time.temporal=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.time.zone=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.time=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.util.concurrent.atomic=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.util.concurrent.locks=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.util.jar=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.util.zip=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.util=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/jdk.internal.loader=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/jdk.internal.misc=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/jdk.internal.ref=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/jdk.internal.reflect=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/sun.nio.ch=ALL-UNNAMED",
+    "--add-opens",
+    "java.desktop/com.sun.imageio.plugins.png=ALL-UNNAMED",
+    "--add-opens",
+    "java.desktop/sun.awt.image=ALL-UNNAMED",
+    "--add-opens",
+    "java.desktop/sun.awt=ALL-UNNAMED",
+    "--add-opens",
+    "java.desktop/sun.lwawt.macosx=ALL-UNNAMED",
+    "--add-opens",
+    "java.sql.rowset/javax.sql.rowset.serial=ALL-UNNAMED",
+    "--add-opens",
+    "jdk.dynalink/jdk.dynalink.beans=ALL-UNNAMED",
+    "--add-opens",
+    "jdk.naming.dns/com.sun.jndi.dns=ALL-UNNAMED,java.naming"
+  ],
+  "main": "com.gtnewhorizons.retrofuturabootstrap.MainStartOnFirstThread",
+  "arguments": [
+    "--username",
+    "${auth_player_name}",
+    "--version",
+    "${version_name}",
+    "--gameDir",
+    "${game_directory}",
+    "--assetsDir",
+    "${assets_root}",
+    "--assetIndex",
+    "${assets_index_name}",
+    "--uuid",
+    "${auth_uuid}",
+    "--accessToken",
+    "${auth_access_token}",
+    "--userProperties",
+    "${user_properties}",
+    "--userType",
+    "${user_type}"
+  ],
+  "tweakers": [
+    "cpw.mods.fml.common.launcher.FMLTweaker"
+  ],
+  "libraries": {
+    "linux": [
+      {
+        "path": "libraries/org/lwjgl/lwjgl-freetype-natives-linux/3.4.3/lwjgl-freetype-3.4.3-natives-linux.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-freetype/3.4.3/lwjgl-freetype-3.4.3-natives-linux.jar",
+        "sha1": "38f27c9a0fbe000bfb38b295c32944d699e246e9",
+        "size": 1385284
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-freetype/3.4.3/lwjgl-freetype-3.4.3.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-freetype/3.4.3/lwjgl-freetype-3.4.3.jar",
+        "sha1": "d2b12961d44f92860fb1ab501f9c69b7a2975236",
+        "size": 468438
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-harfbuzz/3.4.3/lwjgl-harfbuzz-3.4.3.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-harfbuzz/3.4.3/lwjgl-harfbuzz-3.4.3.jar",
+        "sha1": "6400ec0cb9870c4f0eb58d6c870eb73a5e192632",
+        "size": 374304
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-jemalloc-natives-linux/3.4.3/lwjgl-jemalloc-3.4.3-natives-linux.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-jemalloc/3.4.3/lwjgl-jemalloc-3.4.3-natives-linux.jar",
+        "sha1": "ca21b4b4c6d223907de645a18436ef6f677a5d4f",
+        "size": 224040
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-jemalloc/3.4.3/lwjgl-jemalloc-3.4.3.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-jemalloc/3.4.3/lwjgl-jemalloc-3.4.3.jar",
+        "sha1": "350f317eaf5295b1e53f6664ef5fdeeaaa7dcbf0",
+        "size": 48061
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-natives-linux/3.4.3/lwjgl-3.4.3-natives-linux.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl/3.4.3/lwjgl-3.4.3-natives-linux.jar",
+        "sha1": "2800e134537db1a175eba41c430b1018eddc48f0",
+        "size": 137717
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-nuklear-natives-linux/3.4.3/lwjgl-nuklear-3.4.3-natives-linux.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-nuklear/3.4.3/lwjgl-nuklear-3.4.3-natives-linux.jar",
+        "sha1": "60c2e2260be03d5c05cbbd4ff46470a2574ae84b",
+        "size": 219505
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-nuklear/3.4.3/lwjgl-nuklear-3.4.3.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-nuklear/3.4.3/lwjgl-nuklear-3.4.3.jar",
+        "sha1": "d985edd45c1190f783beb6894263de909bc8224e",
+        "size": 503435
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-openal-natives-linux/3.4.3/lwjgl-openal-3.4.3-natives-linux.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-openal/3.4.3/lwjgl-openal-3.4.3-natives-linux.jar",
+        "sha1": "7daa62f9f7b38b30e8a3d3bc7069e9b2e3cd52f0",
+        "size": 1159799
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-openal/3.4.3/lwjgl-openal-3.4.3.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-openal/3.4.3/lwjgl-openal-3.4.3.jar",
+        "sha1": "32b52cda5af6937a4e4bd321bdb83082025cb332",
+        "size": 154573
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-opengl-natives-linux/3.4.3/lwjgl-opengl-3.4.3-natives-linux.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-opengl/3.4.3/lwjgl-opengl-3.4.3-natives-linux.jar",
+        "sha1": "ec6fb42167943e94f7f0b14707c1737653c4044b",
+        "size": 82244
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-opengl/3.4.3/lwjgl-opengl-3.4.3.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-opengl/3.4.3/lwjgl-opengl-3.4.3.jar",
+        "sha1": "b81769ee48050f8c71e70839505f350bf9219d90",
+        "size": 953649
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-sdl-natives-linux/3.4.3/lwjgl-sdl-3.4.3-natives-linux.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-sdl/3.4.3/lwjgl-sdl-3.4.3-natives-linux.jar",
+        "sha1": "6ed1b80b7c211a491612c70e43f27ba1f42cccd0",
+        "size": 1665811
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-sdl/3.4.3/lwjgl-sdl-3.4.3.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-sdl/3.4.3/lwjgl-sdl-3.4.3.jar",
+        "sha1": "c02146735d6ff70d070c73532b435e5c893a346b",
+        "size": 989769
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-shaderc-natives-linux/3.4.3/lwjgl-shaderc-3.4.3-natives-linux.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-shaderc/3.4.3/lwjgl-shaderc-3.4.3-natives-linux.jar",
+        "sha1": "037faa5824f75901f4961e56805aedf68e13cf8b",
+        "size": 3872753
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-shaderc/3.4.3/lwjgl-shaderc-3.4.3.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-shaderc/3.4.3/lwjgl-shaderc-3.4.3.jar",
+        "sha1": "ba9fbc8fc4d50b3e4b436cc958ddb4abdb05867c",
+        "size": 153441
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-spng-natives-linux/3.4.3/lwjgl-spng-3.4.3-natives-linux.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-spng/3.4.3/lwjgl-spng-3.4.3-natives-linux.jar",
+        "sha1": "cd3d817e38f372451f168239ea7b9c03196f2288",
+        "size": 64549
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-spng/3.4.3/lwjgl-spng-3.4.3.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-spng/3.4.3/lwjgl-spng-3.4.3.jar",
+        "sha1": "3a134111ce70d69463278a2a9ab5a20c84cd6484",
+        "size": 120677
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-spvc-natives-linux/3.4.3/lwjgl-spvc-3.4.3-natives-linux.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-spvc/3.4.3/lwjgl-spvc-3.4.3-natives-linux.jar",
+        "sha1": "709eb01deec4bdafb7634b125a63fd8de172fc50",
+        "size": 1265592
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-spvc/3.4.3/lwjgl-spvc-3.4.3.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-spvc/3.4.3/lwjgl-spvc-3.4.3.jar",
+        "sha1": "98e5b5ef5159100b26a169a9aed6c24e820e3eaa",
+        "size": 150189
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-stb-natives-linux/3.4.3/lwjgl-stb-3.4.3-natives-linux.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-stb/3.4.3/lwjgl-stb-3.4.3-natives-linux.jar",
+        "sha1": "3878e44ce27c12791e570b5c8754ef3b68401dd3",
+        "size": 286507
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-stb/3.4.3/lwjgl-stb-3.4.3.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-stb/3.4.3/lwjgl-stb-3.4.3.jar",
+        "sha1": "cdce54785bd3758e44a81f345d6260774d921c78",
+        "size": 143041
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-tinyfd-natives-linux/3.4.3/lwjgl-tinyfd-3.4.3-natives-linux.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-tinyfd/3.4.3/lwjgl-tinyfd-3.4.3-natives-linux.jar",
+        "sha1": "ec7519cfa18378a456180709e0a17d05b05420c0",
+        "size": 45099
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-tinyfd/3.4.3/lwjgl-tinyfd-3.4.3.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-tinyfd/3.4.3/lwjgl-tinyfd-3.4.3.jar",
+        "sha1": "6ca8a0675eb70bf5b0bc200e320bfdfb5a3d8139",
+        "size": 15925
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-zstd-natives-linux/3.4.3/lwjgl-zstd-3.4.3-natives-linux.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-zstd/3.4.3/lwjgl-zstd-3.4.3-natives-linux.jar",
+        "sha1": "6426861f47e30ff78ad4e9202c908d1a7d54d777",
+        "size": 349168
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-zstd/3.4.3/lwjgl-zstd-3.4.3.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-zstd/3.4.3/lwjgl-zstd-3.4.3.jar",
+        "sha1": "d4d61bc851f70f0826b86d94f96df85b2e8bfb1c",
+        "size": 88797
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl/3.4.3/lwjgl-3.4.3.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl/3.4.3/lwjgl-3.4.3.jar",
+        "sha1": "7ab5265a73d8a959ed62332d546536ae6be2f0d5",
+        "size": 1255440
+      },
+      {
+        "path": "libraries/com/mojang/netty/1.8.8/netty-1.8.8.jar",
+        "url": "https://libraries.minecraft.net/com/mojang/netty/1.8.8/netty-1.8.8.jar",
+        "sha1": "0a796914d1c8a55b4da9f4a8856dd9623375d8bb",
+        "size": 15966
+      },
+      {
+        "path": "libraries/com/mojang/realms/1.3.5/realms-1.3.5.jar",
+        "url": "https://libraries.minecraft.net/com/mojang/realms/1.3.5/realms-1.3.5.jar",
+        "sha1": "0807ae355ee63583becd7ea60e76aab1532bb42e",
+        "size": 353818
+      },
+      {
+        "path": "libraries/org/apache/httpcomponents/httpclient/4.3.3/httpclient-4.3.3.jar",
+        "url": "https://libraries.minecraft.net/org/apache/httpcomponents/httpclient/4.3.3/httpclient-4.3.3.jar",
+        "sha1": "18f4247ff4572a074444572cee34647c43e7c9c7",
+        "size": 589512
+      },
+      {
+        "path": "libraries/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar",
+        "url": "https://libraries.minecraft.net/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar",
+        "sha1": "f6f66e966c70a83ffbdb6f17a0919eaf7c8aca7f",
+        "size": 62050
+      },
+      {
+        "path": "libraries/org/apache/httpcomponents/httpcore/4.3.2/httpcore-4.3.2.jar",
+        "url": "https://libraries.minecraft.net/org/apache/httpcomponents/httpcore/4.3.2/httpcore-4.3.2.jar",
+        "sha1": "31fbbff1ddbf98f3aa7377c94d33b0447c646b6e",
+        "size": 282269
+      },
+      {
+        "path": "libraries/java3d/vecmath/1.3.1/vecmath-1.3.1.jar",
+        "url": "https://libraries.minecraft.net/java3d/vecmath/1.3.1/vecmath-1.3.1.jar",
+        "sha1": "a0ae4f51da409fa0c20fa0ca59e6bbc9413ae71d",
+        "size": 289881
+      },
+      {
+        "path": "libraries/net/sf/trove4j/trove4j/3.0.3/trove4j-3.0.3.jar",
+        "url": "https://libraries.minecraft.net/net/sf/trove4j/trove4j/3.0.3/trove4j-3.0.3.jar",
+        "sha1": "42ccaf4761f0dfdfa805c9e340d99a755907e2dd",
+        "size": 2523218
+      },
+      {
+        "path": "libraries/com/ibm/icu/icu4j-core-mojang/51.2/icu4j-core-mojang-51.2.jar",
+        "url": "https://libraries.minecraft.net/com/ibm/icu/icu4j-core-mojang/51.2/icu4j-core-mojang-51.2.jar",
+        "sha1": "63d216a9311cca6be337c1e458e587f99d382b84",
+        "size": 1634692
+      },
+      {
+        "path": "libraries/net/sf/jopt-simple/jopt-simple/4.5/jopt-simple-4.5.jar",
+        "url": "https://libraries.minecraft.net/net/sf/jopt-simple/jopt-simple/4.5/jopt-simple-4.5.jar",
+        "sha1": "6065cc95c661255349c1d0756657be17c29a4fd3",
+        "size": 61311
+      },
+      {
+        "path": "libraries/com/paulscode/codecjorbis/20101023/codecjorbis-20101023.jar",
+        "url": "https://libraries.minecraft.net/com/paulscode/codecjorbis/20101023/codecjorbis-20101023.jar",
+        "sha1": "c73b5636faf089d9f00e8732a829577de25237ee",
+        "size": 103871
+      },
+      {
+        "path": "libraries/com/paulscode/codecwav/20101023/codecwav-20101023.jar",
+        "url": "https://libraries.minecraft.net/com/paulscode/codecwav/20101023/codecwav-20101023.jar",
+        "sha1": "12f031cfe88fef5c1dd36c563c0a3a69bd7261da",
+        "size": 5618
+      },
+      {
+        "path": "libraries/com/paulscode/libraryjavasound/20101123/libraryjavasound-20101123.jar",
+        "url": "https://libraries.minecraft.net/com/paulscode/libraryjavasound/20101123/libraryjavasound-20101123.jar",
+        "sha1": "5c5e304366f75f9eaa2e8cca546a1fb6109348b3",
+        "size": 21679
+      },
+      {
+        "path": "libraries/com/paulscode/librarylwjglopenal/20100824/librarylwjglopenal-20100824.jar",
+        "url": "https://libraries.minecraft.net/com/paulscode/librarylwjglopenal/20100824/librarylwjglopenal-20100824.jar",
+        "sha1": "73e80d0794c39665aec3f62eee88ca91676674ef",
+        "size": 18981
+      },
+      {
+        "path": "libraries/com/paulscode/soundsystem/20120107/soundsystem-20120107.jar",
+        "url": "https://libraries.minecraft.net/com/paulscode/soundsystem/20120107/soundsystem-20120107.jar",
+        "sha1": "419c05fe9be71f792b2d76cfc9b67f1ed0fec7f6",
+        "size": 65020
+      },
+      {
+        "path": "libraries/io/netty/netty-all/4.0.10.Final/netty-all-4.0.10.Final.jar",
+        "url": "https://libraries.minecraft.net/io/netty/netty-all/4.0.10.Final/netty-all-4.0.10.Final.jar",
+        "sha1": "9e50bd52ffe257a0e2cd8d971688d6ce7d174325",
+        "size": 1452995
+      },
+      {
+        "path": "libraries/com/google/guava/guava/15.0/guava-15.0.jar",
+        "url": "https://libraries.minecraft.net/com/google/guava/guava/15.0/guava-15.0.jar",
+        "sha1": "ed727a8d9f247e2050281cb083f1c77b09dcb5cd",
+        "size": 2172168
+      },
+      {
+        "path": "libraries/commons-codec/commons-codec/1.9/commons-codec-1.9.jar",
+        "url": "https://libraries.minecraft.net/commons-codec/commons-codec/1.9/commons-codec-1.9.jar",
+        "sha1": "9ce04e34240f674bc72680f8b843b1457383161a",
+        "size": 263965
+      },
+      {
+        "path": "libraries/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar",
+        "url": "https://libraries.minecraft.net/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar",
+        "sha1": "b3add478d4382b78ea20b1671390a858002feb6c",
+        "size": 283367
+      },
+      {
+        "path": "libraries/com/mojang/authlib/1.5.21/authlib-1.5.21.jar",
+        "url": "https://libraries.minecraft.net/com/mojang/authlib/1.5.21/authlib-1.5.21.jar",
+        "sha1": "aefba0d5b53fbcb70860bc8046ab95d5854c07a5",
+        "size": 64412
+      },
+      {
+        "path": "libraries/org/apache/logging/log4j/log4j-api/2.0-beta9-fixed/log4j-api-2.0-beta9-fixed.jar",
+        "url": "https://files.prismlauncher.org/maven/org/apache/logging/log4j/log4j-api/2.0-beta9-fixed/log4j-api-2.0-beta9-fixed.jar",
+        "sha1": "b61eaf2e64d8b0277e188262a8b771bbfa1502b3",
+        "size": 107347
+      },
+      {
+        "path": "libraries/org/apache/logging/log4j/log4j-core/2.0-beta9-fixed/log4j-core-2.0-beta9-fixed.jar",
+        "url": "https://files.prismlauncher.org/maven/org/apache/logging/log4j/log4j-core/2.0-beta9-fixed/log4j-core-2.0-beta9-fixed.jar",
+        "sha1": "677991ea2d7426f76309a73739cecf609679492c",
+        "size": 677588
+      },
+      {
+        "path": "libraries/tv/twitch/twitch/5.16/twitch-5.16.jar",
+        "url": "https://libraries.minecraft.net/tv/twitch/twitch/5.16/twitch-5.16.jar",
+        "sha1": "1f55f009c61637c10c0acfb8b5ffc600f30044b4",
+        "size": 52315
+      },
+      {
+        "path": "libraries/net/java/jinput/jinput-platform/2.0.5/jinput-platform-2.0.5-natives-linux.jar",
+        "url": "https://libraries.minecraft.net/net/java/jinput/jinput-platform/2.0.5/jinput-platform-2.0.5-natives-linux.jar",
+        "sha1": "7ff832a6eb9ab6a767f1ade2b548092d0fa64795",
+        "size": 10362,
+        "extract": [
+          "META-INF/"
+        ]
+      },
+      {
+        "path": "libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar",
+        "url": "https://libraries.minecraft.net/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar",
+        "sha1": "39c7796b469a600f72380316f6b1f11db6c2c7c4",
+        "size": 208338
+      },
+      {
+        "path": "libraries/net/java/jutils/jutils/1.0.0/jutils-1.0.0.jar",
+        "url": "https://libraries.minecraft.net/net/java/jutils/jutils/1.0.0/jutils-1.0.0.jar",
+        "sha1": "e12fe1fda814bd348c1579329c86943d2cd3c6a6",
+        "size": 7508
+      },
+      {
+        "path": "pack/libraries/lwjgl3ify-3.0.42-forgePatches.jar"
+      },
+      {
+        "path": "libraries/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/forge-1.7.10-10.13.4.1614-1.7.10-universal.jar",
+        "url": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/forge-1.7.10-10.13.4.1614-1.7.10-universal.jar",
+        "sha1": "25fd97f72beca728112256938e03e8105b1b78cc",
+        "size": 3018833
+      },
+      {
+        "path": "libraries/com/typesafe/akka/akka-actor_2.11/2.3.3/akka-actor_2.11-2.3.3.jar",
+        "url": "https://maven.minecraftforge.net/com/typesafe/akka/akka-actor_2.11/2.3.3/akka-actor_2.11-2.3.3.jar",
+        "sha1": "ed62e9fc709ca0f2ff1a3220daa8b70a2870078e",
+        "size": 2514991
+      },
+      {
+        "path": "libraries/com/typesafe/config/1.2.1/config-1.2.1.jar",
+        "url": "https://maven.minecraftforge.net/com/typesafe/config/1.2.1/config-1.2.1.jar",
+        "sha1": "f771f71fdae3df231bcd54d5ca2d57f0bf93f467",
+        "size": 219554
+      },
+      {
+        "path": "libraries/org/scala-lang/scala-actors-migration_2.11/1.1.0/scala-actors-migration_2.11-1.1.0.jar",
+        "url": "https://maven.minecraftforge.net/org/scala-lang/scala-actors-migration_2.11/1.1.0/scala-actors-migration_2.11-1.1.0.jar",
+        "sha1": "dfa8bc42b181d5b9f1a5dd147f8ae308b893eb6f",
+        "size": 58018
+      },
+      {
+        "path": "libraries/org/scala-lang/scala-compiler/2.11.1/scala-compiler-2.11.1.jar",
+        "url": "https://maven.minecraftforge.net/org/scala-lang/scala-compiler/2.11.1/scala-compiler-2.11.1.jar",
+        "sha1": "56ea2e6c025e0821f28d73ca271218b8dd04926a",
+        "size": 13449765
+      },
+      {
+        "path": "libraries/org/scala-lang/plugins/scala-continuations-library_2.11/1.0.2/scala-continuations-library_2.11-1.0.2.jar",
+        "url": "https://maven.minecraftforge.net/org/scala-lang/plugins/scala-continuations-library_2.11/1.0.2/scala-continuations-library_2.11-1.0.2.jar",
+        "sha1": "0e517c53a7e9acd6b1668c5a35eccbaa3bab9aac",
+        "size": 25365
+      },
+      {
+        "path": "libraries/org/scala-lang/plugins/scala-continuations-plugin_2.11.1/1.0.2/scala-continuations-plugin_2.11.1-1.0.2.jar",
+        "url": "https://maven.minecraftforge.net/org/scala-lang/plugins/scala-continuations-plugin_2.11.1/1.0.2/scala-continuations-plugin_2.11.1-1.0.2.jar",
+        "sha1": "f361a3283452c57fa30c1ee69448995de23c60f7",
+        "size": 206575
+      },
+      {
+        "path": "libraries/org/scala-lang/scala-library/2.11.1/scala-library-2.11.1.jar",
+        "url": "https://maven.minecraftforge.net/org/scala-lang/scala-library/2.11.1/scala-library-2.11.1.jar",
+        "sha1": "0e11da23da3eabab9f4777b9220e60d44c1aab6a",
+        "size": 5538130
+      },
+      {
+        "path": "libraries/org/scala-lang/scala-parser-combinators_2.11/1.0.1/scala-parser-combinators_2.11-1.0.1.jar",
+        "url": "https://maven.minecraftforge.net/org/scala-lang/scala-parser-combinators_2.11/1.0.1/scala-parser-combinators_2.11-1.0.1.jar",
+        "sha1": "f05d7345bf5a58924f2837c6c1f4d73a938e1ff0",
+        "size": 419701
+      },
+      {
+        "path": "libraries/org/scala-lang/scala-reflect/2.11.1/scala-reflect-2.11.1.jar",
+        "url": "https://maven.minecraftforge.net/org/scala-lang/scala-reflect/2.11.1/scala-reflect-2.11.1.jar",
+        "sha1": "6580347e61cc7f8e802941e7fde40fa83b8badeb",
+        "size": 4372892
+      },
+      {
+        "path": "libraries/org/scala-lang/scala-swing_2.11/1.0.1/scala-swing_2.11-1.0.1.jar",
+        "url": "https://maven.minecraftforge.net/org/scala-lang/scala-swing_2.11/1.0.1/scala-swing_2.11-1.0.1.jar",
+        "sha1": "b1cdd92bd47b1e1837139c1c53020e86bb9112ae",
+        "size": 726500
+      },
+      {
+        "path": "libraries/org/scala-lang/scala-xml_2.11/1.0.2/scala-xml_2.11-1.0.2.jar",
+        "url": "https://maven.minecraftforge.net/org/scala-lang/scala-xml_2.11/1.0.2/scala-xml_2.11-1.0.2.jar",
+        "sha1": "7a80ec00aec122fba7cd4e0d4cdd87ff7e4cb6d0",
+        "size": 648679
+      },
+      {
+        "path": "libraries/lzma/lzma/0.0.1/lzma-0.0.1.jar",
+        "url": "https://libraries.minecraft.net/lzma/lzma/0.0.1/lzma-0.0.1.jar",
+        "sha1": "521616dc7487b42bef0e803bd2fa3faf668101d7",
+        "size": 5762
+      },
+      {
+        "path": "libraries/com/google/guava/guava/17.0/guava-17.0.jar",
+        "url": "https://libraries.minecraft.net/com/google/guava/guava/17.0/guava-17.0.jar",
+        "sha1": "9c6ef172e8de35fd8d4d8783e4821e57cdef7445",
+        "size": 2243036
+      },
+      {
+        "path": "libraries/com/mojang/minecraft/1.7.10/client.jar",
+        "url": "https://launcher.mojang.com/v1/objects/e80d9b3bf5085002218d4be59e668bac718abbc6/client.jar",
+        "sha1": "e80d9b3bf5085002218d4be59e668bac718abbc6",
+        "size": 5256245
+      }
+    ],
+    "windows": [
+      {
+        "path": "libraries/org/lwjgl/lwjgl-freetype-natives-windows-arm64/3.4.3/lwjgl-freetype-3.4.3-natives-windows-arm64.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-freetype/3.4.3/lwjgl-freetype-3.4.3-natives-windows-arm64.jar",
+        "sha1": "c611e83aea59f960d621c79c78de06745bc95a9e",
+        "size": 1010096
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-freetype-natives-windows-x86/3.4.3/lwjgl-freetype-3.4.3-natives-windows-x86.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-freetype/3.4.3/lwjgl-freetype-3.4.3-natives-windows-x86.jar",
+        "sha1": "adc2db6b6f03612f908604ea6abd97220e23a2bc",
+        "size": 964093
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-freetype-natives-windows/3.4.3/lwjgl-freetype-3.4.3-natives-windows.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-freetype/3.4.3/lwjgl-freetype-3.4.3-natives-windows.jar",
+        "sha1": "0c01f319d5eeebaa143feb143cc746687c88075a",
+        "size": 1152710
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-freetype/3.4.3/lwjgl-freetype-3.4.3.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-freetype/3.4.3/lwjgl-freetype-3.4.3.jar",
+        "sha1": "d2b12961d44f92860fb1ab501f9c69b7a2975236",
+        "size": 468438
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-harfbuzz/3.4.3/lwjgl-harfbuzz-3.4.3.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-harfbuzz/3.4.3/lwjgl-harfbuzz-3.4.3.jar",
+        "sha1": "6400ec0cb9870c4f0eb58d6c870eb73a5e192632",
+        "size": 374304
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-jemalloc-natives-windows-arm64/3.4.3/lwjgl-jemalloc-3.4.3-natives-windows-arm64.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-jemalloc/3.4.3/lwjgl-jemalloc-3.4.3-natives-windows-arm64.jar",
+        "sha1": "7362dcccaf4ee997e9af3e267d5beacb4771e93e",
+        "size": 157515
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-jemalloc-natives-windows-x86/3.4.3/lwjgl-jemalloc-3.4.3-natives-windows-x86.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-jemalloc/3.4.3/lwjgl-jemalloc-3.4.3-natives-windows-x86.jar",
+        "sha1": "95a8412e95214edb7d6f65a55ac45b0d77dda69c",
+        "size": 151249
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-jemalloc-natives-windows/3.4.3/lwjgl-jemalloc-3.4.3-natives-windows.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-jemalloc/3.4.3/lwjgl-jemalloc-3.4.3-natives-windows.jar",
+        "sha1": "d329f1d23bdb18e504f2f5900a93d24b2454bd05",
+        "size": 184467
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-jemalloc/3.4.3/lwjgl-jemalloc-3.4.3.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-jemalloc/3.4.3/lwjgl-jemalloc-3.4.3.jar",
+        "sha1": "350f317eaf5295b1e53f6664ef5fdeeaaa7dcbf0",
+        "size": 48061
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-natives-windows-arm64/3.4.3/lwjgl-3.4.3-natives-windows-arm64.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl/3.4.3/lwjgl-3.4.3-natives-windows-arm64.jar",
+        "sha1": "cedd8fc68a4955a26e9ffdf3dc7d4d31c35e5194",
+        "size": 152235
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-natives-windows-x86/3.4.3/lwjgl-3.4.3-natives-windows-x86.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl/3.4.3/lwjgl-3.4.3-natives-windows-x86.jar",
+        "sha1": "e22da735c9368bcc8e9c6a54b82f80dcc14cf6ec",
+        "size": 150942
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-natives-windows/3.4.3/lwjgl-3.4.3-natives-windows.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl/3.4.3/lwjgl-3.4.3-natives-windows.jar",
+        "sha1": "27e3d2f08b2bcf4fb56a58b836d9437419b980d7",
+        "size": 178848
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-nuklear-natives-windows-arm64/3.4.3/lwjgl-nuklear-3.4.3-natives-windows-arm64.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-nuklear/3.4.3/lwjgl-nuklear-3.4.3-natives-windows-arm64.jar",
+        "sha1": "c219c59f5c9cdc949d0a2c6200804edc85f1e912",
+        "size": 188760
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-nuklear-natives-windows-x86/3.4.3/lwjgl-nuklear-3.4.3-natives-windows-x86.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-nuklear/3.4.3/lwjgl-nuklear-3.4.3-natives-windows-x86.jar",
+        "sha1": "856db3082afd6a3fcc6a78c555210e0069a05c06",
+        "size": 192676
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-nuklear-natives-windows/3.4.3/lwjgl-nuklear-3.4.3-natives-windows.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-nuklear/3.4.3/lwjgl-nuklear-3.4.3-natives-windows.jar",
+        "sha1": "af2f42afcafa60c331310bd6486c355198eb32a2",
+        "size": 234051
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-nuklear/3.4.3/lwjgl-nuklear-3.4.3.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-nuklear/3.4.3/lwjgl-nuklear-3.4.3.jar",
+        "sha1": "d985edd45c1190f783beb6894263de909bc8224e",
+        "size": 503435
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-openal-natives-windows-arm64/3.4.3/lwjgl-openal-3.4.3-natives-windows-arm64.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-openal/3.4.3/lwjgl-openal-3.4.3-natives-windows-arm64.jar",
+        "sha1": "6198ef79d4c7a220fb65689b584e8e3a148c81b7",
+        "size": 897409
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-openal-natives-windows-x86/3.4.3/lwjgl-openal-3.4.3-natives-windows-x86.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-openal/3.4.3/lwjgl-openal-3.4.3-natives-windows-x86.jar",
+        "sha1": "0dda193b8ded0dd2298e5e9b048f061f50b4c208",
+        "size": 917639
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-openal-natives-windows/3.4.3/lwjgl-openal-3.4.3-natives-windows.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-openal/3.4.3/lwjgl-openal-3.4.3-natives-windows.jar",
+        "sha1": "097c14cc0c264d64e4200fc319d86f559f8a6931",
+        "size": 992735
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-openal/3.4.3/lwjgl-openal-3.4.3.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-openal/3.4.3/lwjgl-openal-3.4.3.jar",
+        "sha1": "32b52cda5af6937a4e4bd321bdb83082025cb332",
+        "size": 154573
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-opengl-natives-windows-arm64/3.4.3/lwjgl-opengl-3.4.3-natives-windows-arm64.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-opengl/3.4.3/lwjgl-opengl-3.4.3-natives-windows-arm64.jar",
+        "sha1": "f49d3b795fb4ea9b33c2b8403411eab8620879a1",
+        "size": 84838
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-opengl-natives-windows-x86/3.4.3/lwjgl-opengl-3.4.3-natives-windows-x86.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-opengl/3.4.3/lwjgl-opengl-3.4.3-natives-windows-x86.jar",
+        "sha1": "6659f87c921d236202dfddbdbf72746f3b8b6380",
+        "size": 90652
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-opengl-natives-windows/3.4.3/lwjgl-opengl-3.4.3-natives-windows.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-opengl/3.4.3/lwjgl-opengl-3.4.3-natives-windows.jar",
+        "sha1": "8f46f873190aa1d89f0f59818afcf125bd88adde",
+        "size": 98282
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-opengl/3.4.3/lwjgl-opengl-3.4.3.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-opengl/3.4.3/lwjgl-opengl-3.4.3.jar",
+        "sha1": "b81769ee48050f8c71e70839505f350bf9219d90",
+        "size": 953649
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-sdl-natives-windows-arm64/3.4.3/lwjgl-sdl-3.4.3-natives-windows-arm64.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-sdl/3.4.3/lwjgl-sdl-3.4.3-natives-windows-arm64.jar",
+        "sha1": "7ab134eaab451560b2248b89d2836214f4ce4f6b",
+        "size": 1102920
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-sdl-natives-windows-x86/3.4.3/lwjgl-sdl-3.4.3-natives-windows-x86.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-sdl/3.4.3/lwjgl-sdl-3.4.3-natives-windows-x86.jar",
+        "sha1": "f2bba0544e8c04be5326fdda72acca5779f7feb4",
+        "size": 1072993
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-sdl-natives-windows/3.4.3/lwjgl-sdl-3.4.3-natives-windows.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-sdl/3.4.3/lwjgl-sdl-3.4.3-natives-windows.jar",
+        "sha1": "b91110fdb7a3c09feaac07ee06e0757a8ac33d03",
+        "size": 1241055
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-sdl/3.4.3/lwjgl-sdl-3.4.3.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-sdl/3.4.3/lwjgl-sdl-3.4.3.jar",
+        "sha1": "c02146735d6ff70d070c73532b435e5c893a346b",
+        "size": 989769
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-shaderc-natives-windows-arm64/3.4.3/lwjgl-shaderc-3.4.3-natives-windows-arm64.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-shaderc/3.4.3/lwjgl-shaderc-3.4.3-natives-windows-arm64.jar",
+        "sha1": "bb28dabb8b7d8bea1a35de1a2be6aeade0e565d2",
+        "size": 2359649
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-shaderc-natives-windows-x86/3.4.3/lwjgl-shaderc-3.4.3-natives-windows-x86.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-shaderc/3.4.3/lwjgl-shaderc-3.4.3-natives-windows-x86.jar",
+        "sha1": "58b553b38e68617e195e48fc1c7b74158f8b83b7",
+        "size": 2265278
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-shaderc-natives-windows/3.4.3/lwjgl-shaderc-3.4.3-natives-windows.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-shaderc/3.4.3/lwjgl-shaderc-3.4.3-natives-windows.jar",
+        "sha1": "44266572b8b8b5bbb05e71f13471337ac0d62aba",
+        "size": 2541979
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-shaderc/3.4.3/lwjgl-shaderc-3.4.3.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-shaderc/3.4.3/lwjgl-shaderc-3.4.3.jar",
+        "sha1": "ba9fbc8fc4d50b3e4b436cc958ddb4abdb05867c",
+        "size": 153441
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-spng-natives-windows-arm64/3.4.3/lwjgl-spng-3.4.3-natives-windows-arm64.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-spng/3.4.3/lwjgl-spng-3.4.3-natives-windows-arm64.jar",
+        "sha1": "52794da349310effa3c3f9ea42cadbd0c2f35239",
+        "size": 93695
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-spng-natives-windows-x86/3.4.3/lwjgl-spng-3.4.3-natives-windows-x86.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-spng/3.4.3/lwjgl-spng-3.4.3-natives-windows-x86.jar",
+        "sha1": "754aadb96f6c29f03e452d5c915a24ceed521202",
+        "size": 100552
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-spng-natives-windows/3.4.3/lwjgl-spng-3.4.3-natives-windows.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-spng/3.4.3/lwjgl-spng-3.4.3-natives-windows.jar",
+        "sha1": "ac816c4521d282440f9867be23ae2e076bae7c15",
+        "size": 108983
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-spng/3.4.3/lwjgl-spng-3.4.3.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-spng/3.4.3/lwjgl-spng-3.4.3.jar",
+        "sha1": "3a134111ce70d69463278a2a9ab5a20c84cd6484",
+        "size": 120677
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-spvc-natives-windows-arm64/3.4.3/lwjgl-spvc-3.4.3-natives-windows-arm64.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-spvc/3.4.3/lwjgl-spvc-3.4.3-natives-windows-arm64.jar",
+        "sha1": "220ef902b26215f0f4718e4cdf9aa49005e33f93",
+        "size": 950153
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-spvc-natives-windows-x86/3.4.3/lwjgl-spvc-3.4.3-natives-windows-x86.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-spvc/3.4.3/lwjgl-spvc-3.4.3-natives-windows-x86.jar",
+        "sha1": "82287bf44d44f690b5734cad6c7d41d2a5719e14",
+        "size": 861484
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-spvc-natives-windows/3.4.3/lwjgl-spvc-3.4.3-natives-windows.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-spvc/3.4.3/lwjgl-spvc-3.4.3-natives-windows.jar",
+        "sha1": "996d1baf778567a6d8d6970a9eda5c4c18957386",
+        "size": 966671
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-spvc/3.4.3/lwjgl-spvc-3.4.3.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-spvc/3.4.3/lwjgl-spvc-3.4.3.jar",
+        "sha1": "98e5b5ef5159100b26a169a9aed6c24e820e3eaa",
+        "size": 150189
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-stb-natives-windows-arm64/3.4.3/lwjgl-stb-3.4.3-natives-windows-arm64.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-stb/3.4.3/lwjgl-stb-3.4.3-natives-windows-arm64.jar",
+        "sha1": "094ff1f4b128a8224fbef93d4b8b9b503c65b402",
+        "size": 241161
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-stb-natives-windows-x86/3.4.3/lwjgl-stb-3.4.3-natives-windows-x86.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-stb/3.4.3/lwjgl-stb-3.4.3-natives-windows-x86.jar",
+        "sha1": "d54c9488ffb09c946e519976cc9dc50fd0b5c3ab",
+        "size": 254377
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-stb-natives-windows/3.4.3/lwjgl-stb-3.4.3-natives-windows.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-stb/3.4.3/lwjgl-stb-3.4.3-natives-windows.jar",
+        "sha1": "0ada47b3ce6917bd113759f5caad20f2cca06d4c",
+        "size": 293076
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-stb/3.4.3/lwjgl-stb-3.4.3.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-stb/3.4.3/lwjgl-stb-3.4.3.jar",
+        "sha1": "cdce54785bd3758e44a81f345d6260774d921c78",
+        "size": 143041
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-tinyfd-natives-windows-arm64/3.4.3/lwjgl-tinyfd-3.4.3-natives-windows-arm64.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-tinyfd/3.4.3/lwjgl-tinyfd-3.4.3-natives-windows-arm64.jar",
+        "sha1": "61575767ecd270b7fbe506bee01956afcc9b5ea5",
+        "size": 114046
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-tinyfd-natives-windows-x86/3.4.3/lwjgl-tinyfd-3.4.3-natives-windows-x86.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-tinyfd/3.4.3/lwjgl-tinyfd-3.4.3-natives-windows-x86.jar",
+        "sha1": "03b016ab90ba18f31671e5c83d42d5242f15e4f1",
+        "size": 113381
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-tinyfd-natives-windows/3.4.3/lwjgl-tinyfd-3.4.3-natives-windows.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-tinyfd/3.4.3/lwjgl-tinyfd-3.4.3-natives-windows.jar",
+        "sha1": "1cca6d63619d9fd0109e4fa3cc8bb5c37d88f2a6",
+        "size": 131218
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-tinyfd/3.4.3/lwjgl-tinyfd-3.4.3.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-tinyfd/3.4.3/lwjgl-tinyfd-3.4.3.jar",
+        "sha1": "6ca8a0675eb70bf5b0bc200e320bfdfb5a3d8139",
+        "size": 15925
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-zstd-natives-windows-arm64/3.4.3/lwjgl-zstd-3.4.3-natives-windows-arm64.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-zstd/3.4.3/lwjgl-zstd-3.4.3-natives-windows-arm64.jar",
+        "sha1": "4aa2d89676e07787e0a4dcdf970717ddb5462b05",
+        "size": 236847
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-zstd-natives-windows-x86/3.4.3/lwjgl-zstd-3.4.3-natives-windows-x86.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-zstd/3.4.3/lwjgl-zstd-3.4.3-natives-windows-x86.jar",
+        "sha1": "1253616fa2090df4434101e9084dd1b5ca42da63",
+        "size": 228893
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-zstd-natives-windows/3.4.3/lwjgl-zstd-3.4.3-natives-windows.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-zstd/3.4.3/lwjgl-zstd-3.4.3-natives-windows.jar",
+        "sha1": "ad35b82726525b649531aea44b9945c3432cfa1e",
+        "size": 261515
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl-zstd/3.4.3/lwjgl-zstd-3.4.3.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl-zstd/3.4.3/lwjgl-zstd-3.4.3.jar",
+        "sha1": "d4d61bc851f70f0826b86d94f96df85b2e8bfb1c",
+        "size": 88797
+      },
+      {
+        "path": "libraries/org/lwjgl/lwjgl/3.4.3/lwjgl-3.4.3.jar",
+        "url": "https://repo.maven.apache.org/maven2/org/lwjgl/lwjgl/3.4.3/lwjgl-3.4.3.jar",
+        "sha1": "7ab5265a73d8a959ed62332d546536ae6be2f0d5",
+        "size": 1255440
+      },
+      {
+        "path": "libraries/com/mojang/netty/1.8.8/netty-1.8.8.jar",
+        "url": "https://libraries.minecraft.net/com/mojang/netty/1.8.8/netty-1.8.8.jar",
+        "sha1": "0a796914d1c8a55b4da9f4a8856dd9623375d8bb",
+        "size": 15966
+      },
+      {
+        "path": "libraries/com/mojang/realms/1.3.5/realms-1.3.5.jar",
+        "url": "https://libraries.minecraft.net/com/mojang/realms/1.3.5/realms-1.3.5.jar",
+        "sha1": "0807ae355ee63583becd7ea60e76aab1532bb42e",
+        "size": 353818
+      },
+      {
+        "path": "libraries/org/apache/httpcomponents/httpclient/4.3.3/httpclient-4.3.3.jar",
+        "url": "https://libraries.minecraft.net/org/apache/httpcomponents/httpclient/4.3.3/httpclient-4.3.3.jar",
+        "sha1": "18f4247ff4572a074444572cee34647c43e7c9c7",
+        "size": 589512
+      },
+      {
+        "path": "libraries/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar",
+        "url": "https://libraries.minecraft.net/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar",
+        "sha1": "f6f66e966c70a83ffbdb6f17a0919eaf7c8aca7f",
+        "size": 62050
+      },
+      {
+        "path": "libraries/org/apache/httpcomponents/httpcore/4.3.2/httpcore-4.3.2.jar",
+        "url": "https://libraries.minecraft.net/org/apache/httpcomponents/httpcore/4.3.2/httpcore-4.3.2.jar",
+        "sha1": "31fbbff1ddbf98f3aa7377c94d33b0447c646b6e",
+        "size": 282269
+      },
+      {
+        "path": "libraries/java3d/vecmath/1.3.1/vecmath-1.3.1.jar",
+        "url": "https://libraries.minecraft.net/java3d/vecmath/1.3.1/vecmath-1.3.1.jar",
+        "sha1": "a0ae4f51da409fa0c20fa0ca59e6bbc9413ae71d",
+        "size": 289881
+      },
+      {
+        "path": "libraries/net/sf/trove4j/trove4j/3.0.3/trove4j-3.0.3.jar",
+        "url": "https://libraries.minecraft.net/net/sf/trove4j/trove4j/3.0.3/trove4j-3.0.3.jar",
+        "sha1": "42ccaf4761f0dfdfa805c9e340d99a755907e2dd",
+        "size": 2523218
+      },
+      {
+        "path": "libraries/com/ibm/icu/icu4j-core-mojang/51.2/icu4j-core-mojang-51.2.jar",
+        "url": "https://libraries.minecraft.net/com/ibm/icu/icu4j-core-mojang/51.2/icu4j-core-mojang-51.2.jar",
+        "sha1": "63d216a9311cca6be337c1e458e587f99d382b84",
+        "size": 1634692
+      },
+      {
+        "path": "libraries/net/sf/jopt-simple/jopt-simple/4.5/jopt-simple-4.5.jar",
+        "url": "https://libraries.minecraft.net/net/sf/jopt-simple/jopt-simple/4.5/jopt-simple-4.5.jar",
+        "sha1": "6065cc95c661255349c1d0756657be17c29a4fd3",
+        "size": 61311
+      },
+      {
+        "path": "libraries/com/paulscode/codecjorbis/20101023/codecjorbis-20101023.jar",
+        "url": "https://libraries.minecraft.net/com/paulscode/codecjorbis/20101023/codecjorbis-20101023.jar",
+        "sha1": "c73b5636faf089d9f00e8732a829577de25237ee",
+        "size": 103871
+      },
+      {
+        "path": "libraries/com/paulscode/codecwav/20101023/codecwav-20101023.jar",
+        "url": "https://libraries.minecraft.net/com/paulscode/codecwav/20101023/codecwav-20101023.jar",
+        "sha1": "12f031cfe88fef5c1dd36c563c0a3a69bd7261da",
+        "size": 5618
+      },
+      {
+        "path": "libraries/com/paulscode/libraryjavasound/20101123/libraryjavasound-20101123.jar",
+        "url": "https://libraries.minecraft.net/com/paulscode/libraryjavasound/20101123/libraryjavasound-20101123.jar",
+        "sha1": "5c5e304366f75f9eaa2e8cca546a1fb6109348b3",
+        "size": 21679
+      },
+      {
+        "path": "libraries/com/paulscode/librarylwjglopenal/20100824/librarylwjglopenal-20100824.jar",
+        "url": "https://libraries.minecraft.net/com/paulscode/librarylwjglopenal/20100824/librarylwjglopenal-20100824.jar",
+        "sha1": "73e80d0794c39665aec3f62eee88ca91676674ef",
+        "size": 18981
+      },
+      {
+        "path": "libraries/com/paulscode/soundsystem/20120107/soundsystem-20120107.jar",
+        "url": "https://libraries.minecraft.net/com/paulscode/soundsystem/20120107/soundsystem-20120107.jar",
+        "sha1": "419c05fe9be71f792b2d76cfc9b67f1ed0fec7f6",
+        "size": 65020
+      },
+      {
+        "path": "libraries/io/netty/netty-all/4.0.10.Final/netty-all-4.0.10.Final.jar",
+        "url": "https://libraries.minecraft.net/io/netty/netty-all/4.0.10.Final/netty-all-4.0.10.Final.jar",
+        "sha1": "9e50bd52ffe257a0e2cd8d971688d6ce7d174325",
+        "size": 1452995
+      },
+      {
+        "path": "libraries/com/google/guava/guava/15.0/guava-15.0.jar",
+        "url": "https://libraries.minecraft.net/com/google/guava/guava/15.0/guava-15.0.jar",
+        "sha1": "ed727a8d9f247e2050281cb083f1c77b09dcb5cd",
+        "size": 2172168
+      },
+      {
+        "path": "libraries/commons-codec/commons-codec/1.9/commons-codec-1.9.jar",
+        "url": "https://libraries.minecraft.net/commons-codec/commons-codec/1.9/commons-codec-1.9.jar",
+        "sha1": "9ce04e34240f674bc72680f8b843b1457383161a",
+        "size": 263965
+      },
+      {
+        "path": "libraries/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar",
+        "url": "https://libraries.minecraft.net/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar",
+        "sha1": "b3add478d4382b78ea20b1671390a858002feb6c",
+        "size": 283367
+      },
+      {
+        "path": "libraries/com/mojang/authlib/1.5.21/authlib-1.5.21.jar",
+        "url": "https://libraries.minecraft.net/com/mojang/authlib/1.5.21/authlib-1.5.21.jar",
+        "sha1": "aefba0d5b53fbcb70860bc8046ab95d5854c07a5",
+        "size": 64412
+      },
+      {
+        "path": "libraries/org/apache/logging/log4j/log4j-api/2.0-beta9-fixed/log4j-api-2.0-beta9-fixed.jar",
+        "url": "https://files.prismlauncher.org/maven/org/apache/logging/log4j/log4j-api/2.0-beta9-fixed/log4j-api-2.0-beta9-fixed.jar",
+        "sha1": "b61eaf2e64d8b0277e188262a8b771bbfa1502b3",
+        "size": 107347
+      },
+      {
+        "path": "libraries/org/apache/logging/log4j/log4j-core/2.0-beta9-fixed/log4j-core-2.0-beta9-fixed.jar",
+        "url": "https://files.prismlauncher.org/maven/org/apache/logging/log4j/log4j-core/2.0-beta9-fixed/log4j-core-2.0-beta9-fixed.jar",
+        "sha1": "677991ea2d7426f76309a73739cecf609679492c",
+        "size": 677588
+      },
+      {
+        "path": "libraries/tv/twitch/twitch/5.16/twitch-5.16.jar",
+        "url": "https://libraries.minecraft.net/tv/twitch/twitch/5.16/twitch-5.16.jar",
+        "sha1": "1f55f009c61637c10c0acfb8b5ffc600f30044b4",
+        "size": 52315
+      },
+      {
+        "path": "libraries/tv/twitch/twitch-platform/5.16/twitch-platform-5.16-natives-windows-64.jar",
+        "url": "https://libraries.minecraft.net/tv/twitch/twitch-platform/5.16/twitch-platform-5.16-natives-windows-64.jar",
+        "sha1": "39d0c3d363735b4785598e0e7fbf8297c706a9f9",
+        "size": 463390,
+        "extract": [
+          "META-INF/"
+        ]
+      },
+      {
+        "path": "libraries/tv/twitch/twitch-external-platform/4.5/twitch-external-platform-4.5-natives-windows-64.jar",
+        "url": "https://libraries.minecraft.net/tv/twitch/twitch-external-platform/4.5/twitch-external-platform-4.5-natives-windows-64.jar",
+        "sha1": "c3cde57891b935d41b6680a9c5e1502eeab76d86",
+        "size": 7457619,
+        "extract": [
+          "META-INF/"
+        ]
+      },
+      {
+        "path": "libraries/net/java/jinput/jinput-platform/2.0.5/jinput-platform-2.0.5-natives-windows.jar",
+        "url": "https://libraries.minecraft.net/net/java/jinput/jinput-platform/2.0.5/jinput-platform-2.0.5-natives-windows.jar",
+        "sha1": "385ee093e01f587f30ee1c8a2ee7d408fd732e16",
+        "size": 155179,
+        "extract": [
+          "META-INF/"
+        ]
+      },
+      {
+        "path": "libraries/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar",
+        "url": "https://libraries.minecraft.net/net/java/jinput/jinput/2.0.5/jinput-2.0.5.jar",
+        "sha1": "39c7796b469a600f72380316f6b1f11db6c2c7c4",
+        "size": 208338
+      },
+      {
+        "path": "libraries/net/java/jutils/jutils/1.0.0/jutils-1.0.0.jar",
+        "url": "https://libraries.minecraft.net/net/java/jutils/jutils/1.0.0/jutils-1.0.0.jar",
+        "sha1": "e12fe1fda814bd348c1579329c86943d2cd3c6a6",
+        "size": 7508
+      },
+      {
+        "path": "pack/libraries/lwjgl3ify-3.0.42-forgePatches.jar"
+      },
+      {
+        "path": "libraries/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/forge-1.7.10-10.13.4.1614-1.7.10-universal.jar",
+        "url": "https://maven.minecraftforge.net/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/forge-1.7.10-10.13.4.1614-1.7.10-universal.jar",
+        "sha1": "25fd97f72beca728112256938e03e8105b1b78cc",
+        "size": 3018833
+      },
+      {
+        "path": "libraries/com/typesafe/akka/akka-actor_2.11/2.3.3/akka-actor_2.11-2.3.3.jar",
+        "url": "https://maven.minecraftforge.net/com/typesafe/akka/akka-actor_2.11/2.3.3/akka-actor_2.11-2.3.3.jar",
+        "sha1": "ed62e9fc709ca0f2ff1a3220daa8b70a2870078e",
+        "size": 2514991
+      },
+      {
+        "path": "libraries/com/typesafe/config/1.2.1/config-1.2.1.jar",
+        "url": "https://maven.minecraftforge.net/com/typesafe/config/1.2.1/config-1.2.1.jar",
+        "sha1": "f771f71fdae3df231bcd54d5ca2d57f0bf93f467",
+        "size": 219554
+      },
+      {
+        "path": "libraries/org/scala-lang/scala-actors-migration_2.11/1.1.0/scala-actors-migration_2.11-1.1.0.jar",
+        "url": "https://maven.minecraftforge.net/org/scala-lang/scala-actors-migration_2.11/1.1.0/scala-actors-migration_2.11-1.1.0.jar",
+        "sha1": "dfa8bc42b181d5b9f1a5dd147f8ae308b893eb6f",
+        "size": 58018
+      },
+      {
+        "path": "libraries/org/scala-lang/scala-compiler/2.11.1/scala-compiler-2.11.1.jar",
+        "url": "https://maven.minecraftforge.net/org/scala-lang/scala-compiler/2.11.1/scala-compiler-2.11.1.jar",
+        "sha1": "56ea2e6c025e0821f28d73ca271218b8dd04926a",
+        "size": 13449765
+      },
+      {
+        "path": "libraries/org/scala-lang/plugins/scala-continuations-library_2.11/1.0.2/scala-continuations-library_2.11-1.0.2.jar",
+        "url": "https://maven.minecraftforge.net/org/scala-lang/plugins/scala-continuations-library_2.11/1.0.2/scala-continuations-library_2.11-1.0.2.jar",
+        "sha1": "0e517c53a7e9acd6b1668c5a35eccbaa3bab9aac",
+        "size": 25365
+      },
+      {
+        "path": "libraries/org/scala-lang/plugins/scala-continuations-plugin_2.11.1/1.0.2/scala-continuations-plugin_2.11.1-1.0.2.jar",
+        "url": "https://maven.minecraftforge.net/org/scala-lang/plugins/scala-continuations-plugin_2.11.1/1.0.2/scala-continuations-plugin_2.11.1-1.0.2.jar",
+        "sha1": "f361a3283452c57fa30c1ee69448995de23c60f7",
+        "size": 206575
+      },
+      {
+        "path": "libraries/org/scala-lang/scala-library/2.11.1/scala-library-2.11.1.jar",
+        "url": "https://maven.minecraftforge.net/org/scala-lang/scala-library/2.11.1/scala-library-2.11.1.jar",
+        "sha1": "0e11da23da3eabab9f4777b9220e60d44c1aab6a",
+        "size": 5538130
+      },
+      {
+        "path": "libraries/org/scala-lang/scala-parser-combinators_2.11/1.0.1/scala-parser-combinators_2.11-1.0.1.jar",
+        "url": "https://maven.minecraftforge.net/org/scala-lang/scala-parser-combinators_2.11/1.0.1/scala-parser-combinators_2.11-1.0.1.jar",
+        "sha1": "f05d7345bf5a58924f2837c6c1f4d73a938e1ff0",
+        "size": 419701
+      },
+      {
+        "path": "libraries/org/scala-lang/scala-reflect/2.11.1/scala-reflect-2.11.1.jar",
+        "url": "https://maven.minecraftforge.net/org/scala-lang/scala-reflect/2.11.1/scala-reflect-2.11.1.jar",
+        "sha1": "6580347e61cc7f8e802941e7fde40fa83b8badeb",
+        "size": 4372892
+      },
+      {
+        "path": "libraries/org/scala-lang/scala-swing_2.11/1.0.1/scala-swing_2.11-1.0.1.jar",
+        "url": "https://maven.minecraftforge.net/org/scala-lang/scala-swing_2.11/1.0.1/scala-swing_2.11-1.0.1.jar",
+        "sha1": "b1cdd92bd47b1e1837139c1c53020e86bb9112ae",
+        "size": 726500
+      },
+      {
+        "path": "libraries/org/scala-lang/scala-xml_2.11/1.0.2/scala-xml_2.11-1.0.2.jar",
+        "url": "https://maven.minecraftforge.net/org/scala-lang/scala-xml_2.11/1.0.2/scala-xml_2.11-1.0.2.jar",
+        "sha1": "7a80ec00aec122fba7cd4e0d4cdd87ff7e4cb6d0",
+        "size": 648679
+      },
+      {
+        "path": "libraries/lzma/lzma/0.0.1/lzma-0.0.1.jar",
+        "url": "https://libraries.minecraft.net/lzma/lzma/0.0.1/lzma-0.0.1.jar",
+        "sha1": "521616dc7487b42bef0e803bd2fa3faf668101d7",
+        "size": 5762
+      },
+      {
+        "path": "libraries/com/google/guava/guava/17.0/guava-17.0.jar",
+        "url": "https://libraries.minecraft.net/com/google/guava/guava/17.0/guava-17.0.jar",
+        "sha1": "9c6ef172e8de35fd8d4d8783e4821e57cdef7445",
+        "size": 2243036
+      },
+      {
+        "path": "libraries/com/mojang/minecraft/1.7.10/client.jar",
+        "url": "https://launcher.mojang.com/v1/objects/e80d9b3bf5085002218d4be59e668bac718abbc6/client.jar",
+        "sha1": "e80d9b3bf5085002218d4be59e668bac718abbc6",
+        "size": 5256245
+      }
+    ]
+  }
+}
