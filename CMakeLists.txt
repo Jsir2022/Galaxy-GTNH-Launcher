@@ -8,6 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_AUTOMOC ON)
 
 set(MSA_CLIENT_ID "" CACHE STRING "Microsoft public client application ID")
+option(GTNH_ENABLE_INSTALL_DIAGNOSTICS "Enable the developer-only install probe" OFF)
 set(GTNH_SERVER "gtnh.jsir.tech" CACHE STRING "Minecraft server hostname")
 set(GTNH_SERVER_PORT 25565 CACHE STRING "Minecraft server port")
 configure_file(src/config.h.in config.h @ONLY)

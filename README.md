@@ -1,6 +1,8 @@
-# GTNH 启动器
+# Galaxy GTNH Launcher
 
-Qt 6 启动器首版，面向 GT New Horizons 2.9.0 和 Java 25。发行包内置 Java。玩家打开启动器，选一个安装目录，在微软网页完成授权。启动器安装 GTNH，验证账号有 Minecraft Java 版权益，再启动客户端并连接指定服务器。
+Qt 6 启动器首版，面向 GT New Horizons 2.9.0 和 Java 25。发行包内置 Java。玩家打开启动器，选一个安装目录，在微软网页完成授权。启动器验证 Minecraft Java 版权益后再下载 Minecraft 和 GTNH，安装完成后启动客户端并连接指定服务器。
+
+Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.
 
 本项目源码采用 GPL-3.0-or-later。第三方组件分别适用其许可，见 [来源清单](THIRD-PARTY.md)。
 
@@ -28,5 +30,5 @@ Linux 包由「启动 GTNH.sh」启动，依赖目标发行版提供兼容的系
 
 - 固定安装官方 GTNH 2.9.0 Java 17–26 客户端档案及 Galaxy 所需的附加模组，并始终使用内置 Java 25 启动。
 - 游戏文件保存于所选目录下的 `GTNH-Launcher-2.9.0`。游戏控制台输出保存于其下的 `game-console.log`。
-- Linux 可用 `GtnhLauncher --prepare-only <空目录>` 验证正式安装路径。该入口只进行安装，无游戏启动能力。
+- 开发者可用 `-DGTNH_ENABLE_INSTALL_DIAGNOSTICS=ON` 构建专用安装探针。发行构建默认关闭探针，玩家须先完成授权。
 - 自更新、整合包增量同步与服主发行工具留待下一阶段。

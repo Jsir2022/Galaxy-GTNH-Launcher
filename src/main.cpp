@@ -43,7 +43,7 @@ class Launcher : public QWidget {
 public:
     Launcher()
     {
-        setWindowTitle("GTNH 启动器");
+        setWindowTitle("Galaxy GTNH Launcher");
         resize(535, 265);
         auto layout = new QVBoxLayout(this);
         auto title = new QLabel("GT New Horizons 2.9.0");
@@ -67,6 +67,9 @@ public:
         buttons->addWidget(&openBrowser);
         buttons->addWidget(&cancel);
         layout->addLayout(buttons);
+        auto notice = new QLabel("非 Minecraft 官方产品。未经 Mojang 或 Microsoft 批准，与其无关联。");
+        notice->setWordWrap(true);
+        layout->addWidget(notice);
         openBrowser.hide();
         cancel.hide();
 
@@ -122,7 +125,7 @@ private:
         }
         choose.setEnabled(false);
         signIn.setEnabled(false);
-        status.setText("正在准备游戏…");
+        status.setText("正在验证 Minecraft 正版账号…");
         worker = QThread::create([this, location = selected, app] {
             auto report = [this](const QString &text) {
                 QMetaObject::invokeMethod(this, [this, text] { status.setText(text); }, Qt::QueuedConnection);
@@ -131,8 +134,6 @@ private:
                 const auto root = gameRoot(location);
                 QLockFile lock(root + "/.launcher.lock");
                 lockInstallation(lock);
-                prepareGame(root, report);
-                report("正在验证 Minecraft 正版账号…");
                 const auto account = authenticate(app, [this](const QUrl &url, const QString &code) {
                     QMetaObject::invokeMethod(this, [this, url, code] {
                         verificationUrl = url;
@@ -146,7 +147,9 @@ private:
                 });
                 if (QThread::currentThread()->isInterruptionRequested()) fail("已取消正版授权。");
                 QMetaObject::invokeMethod(this, [this] { hideAuth(); }, Qt::QueuedConnection);
-                report("已验证 " + account.name + "，正在启动游戏…");
+                report("已验证 " + account.name + "，正在准备游戏…");
+                prepareGame(root, report);
+                report("正在启动游戏…");
                 startGame(root, account, report);
                 report("游戏已关闭。");
             } catch (const std::exception &error) {
@@ -186,12 +189,13 @@ private:
 
 int main(int argc, char *argv[])
 {
-    bool diagnostic = false;
-    for (int i = 1; i < argc; ++i)
-        diagnostic |= QByteArray(argv[i]) == "--prepare-only";
     QCoreApplication::setOrganizationName("GalaxyGTNH");
     QCoreApplication::setApplicationName("GTNH Launcher");
     QCoreApplication::setApplicationVersion("0.1.0");
+#if GTNH_ENABLE_INSTALL_DIAGNOSTICS
+    bool diagnostic = false;
+    for (int i = 1; i < argc; ++i)
+        diagnostic |= QByteArray(argv[i]) == "--prepare-only";
     if (diagnostic) {
         QCoreApplication app(argc, argv);
         QCommandLineParser parser;
@@ -211,7 +215,9 @@ int main(int argc, char *argv[])
             return 1;
         }
     }
+#endif
     QApplication app(argc, argv);
+    app.setApplicationDisplayName("Galaxy GTNH Launcher");
     Launcher window;
     window.show();
     return app.exec();
