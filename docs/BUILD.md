@@ -2,7 +2,7 @@
 
 Build the launcher with CMake 3.22+, Qt 6.4+ (Widgets and Network), C++20, and JDK 17+. The shipped JRE is a separate runtime for the game and archive helper.
 
-- `MSA_CLIENT_ID` sets the public Microsoft application ID at build time. The app registration needs personal Microsoft accounts, public-client device flow and Minecraft Services access. `GTNH_MSA_CLIENT_ID` overrides that setting for local runs.
+- `MSA_CLIENT_ID` sets the public Microsoft application ID at build time. The app registration needs personal Microsoft accounts, public-client device flow and Minecraft Services access. `GTNH_MSA_CLIENT_ID` supplies or overrides that setting for local runs. Keep deployment settings in an environment variable, the ignored `CMakeUserPresets.json`, or an ignored file under `.local/`. Microsoft login runs as a public client and requires no client secret.
 - `GTNH_SERVER` and `GTNH_SERVER_PORT` set the initial server address. The default is `gtnh.jsir.tech` with the default Minecraft port and normal SRV resolution.
 - `GTNH_ENABLE_INSTALL_DIAGNOSTICS=ON` builds a development-only install probe. Keep it off for player builds.
 

@@ -30,7 +30,7 @@ cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build --config Release
 ```
 
-默认使用本项目的公开 AppID。自行构建可通过 `MSA_CLIENT_ID` 配置已获 Minecraft Services 接入的应用。便携包所需文件和开发选项见[构建与打包指南](docs/BUILD.md)。
+请在本地通过 `MSA_CLIENT_ID` 或环境变量 `GTNH_MSA_CLIENT_ID` 配置已获 Minecraft Services 接入的应用。部署 ID 和凭据保存在 Git 之外。便携包所需文件和开发选项见[构建与打包指南](docs/BUILD.md)。
 
 ## 许可与维护者
 

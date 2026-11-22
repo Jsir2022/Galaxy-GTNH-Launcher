@@ -30,7 +30,7 @@ cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build --config Release
 ```
 
-The default public AppID belongs to this project. A separate build can set `MSA_CLIENT_ID` to an application with Minecraft Services access. See [Build and packaging](docs/BUILD.md) for portable package inputs and development options.
+Configure an application with Minecraft Services access locally via `MSA_CLIENT_ID` or the `GTNH_MSA_CLIENT_ID` environment variable. Keep deployment identifiers and credentials out of Git. See [Build and packaging](docs/BUILD.md) for portable package inputs and development options.
 
 ## License and maintainer
 
